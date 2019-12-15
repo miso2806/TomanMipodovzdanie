@@ -19,17 +19,19 @@ void n(char *pt,int count) {
 	printf("\n"); }
 	
 	
-	//void na V
+	//vykonanie funkcie V pri vstupe pismenka v sa vypise pole 
 	  void v(char *pt, char *ut,  int count)
-	{    
+	{    //ak je pole pt prazdne tak sa vypise sprava nebola nacitana
 	     if ((pt)==NULL){
 		  
       	 printf("Sprava nie je nacitana");
          return;
 	  }
+          //sprava sa premiestni z povodneho pola do upraveneho pola
 	    int i;
         *ut=*pt;
          for (i = 0; i < count; i++) 
+         //sprava sa zapise do upraveneho pola
          putchar(*ut);
          printf("\n");
 
