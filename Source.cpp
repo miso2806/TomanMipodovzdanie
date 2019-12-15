@@ -72,17 +72,22 @@ void n(char *pt,int count) {
       	 printf("\n");
 	  }
 	  
-	  
-	  void d(pt){
+	  //pri nacitani funkcie D sa nacita d z pola a vypisu sa vsetky slova danej dlzky ktoru zadame
+	  void d(pt){ //ak je povodny text prazdny vypise sa sprava nebola nacitana
 	  	if ((pt)==NULL){
 		  
       	 printf("Sprava nie je nacitana");
          return;
 	  }
+           
 	   printf("Zadaj cislo k:\n")
+           // k bude dlzka slov ktore budeme chciet nacitat
 	   int k;
+		//k musi byt najmenej 1 a najviac 100
 	      while(k>=1 && k<=100){
+		//zistime ake k bolo v sprave napisane
 	    	scanf("%d",&k);
+		 //ak k nepatri do intervalu vypise sa ze sme zadali nespravnu hodnotu
 	    	if (k<1 && k>100){
 	    	 printf("zadal si nespravne 'k'\n");
 	    }
