@@ -117,6 +117,7 @@
 	  }
       
       
+	 //inicializovanie mainu   
 	int main(void)
 	{
 	//nacitanie pola
@@ -126,9 +127,10 @@
 	char  upraveny_text[1000];
 	char *pt = &povodny_text[count];
 	char *ut = &upraveny_text[count1];
-	//nacitanie sifry
+	//nacitanie suboru
 	FILE *fr = fopen("sifra.txt", "r");
 	  int c, d;
+    // nacitanie pismenka ktore vypiseme do pola podla typu pismenka sa vykona akcia
 	  for (;;) {
 	    d = getchar();
 	    while (getchar() != '\n');
@@ -158,10 +160,10 @@
 		}
 	    if (d == 'k')
 	      break;
+        //ak sa nacita ine pismeno tak sa nevypise nic len medzera
 	    if (d != 'n' && d != 'k' && d !='v' && d !='u' && d !='s' && d!='d' && d!='h' && d!='c' )
 	     printf("\n");
 	  }
 	  return 0;
 	}
-
  
