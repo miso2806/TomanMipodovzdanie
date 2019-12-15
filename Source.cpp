@@ -89,32 +89,6 @@
 	  printf("zadal si spravne k");
 	  
 	  }
-	  
-	  void h(char *ut){
-	  	if ((ut)==NULL){
-		  
-      	 printf("Nie je k dispozicii upravena sprava");
-         return;
-	  }
-	   int i,c;
-	  int pole[POCET];
-	  for (i = 0; i < POCET; i++)
-      pole[i] = 0;   
-       while ((c = *ut)) {
-	        if (isupper(c))
-	        putchar(c);
-    }
-    for (i = 0; i < POCET; i++) {
-      printf("%c - %2d\t", i + 'A', pole[i]); 
-      for (c = 0; c < pole[i]; c++) { 
-        putchar('*');                 
-      }
-      putchar('\n'); 
-}
-	  	
-	  	
-	  	
-	  }
       
       
 	int main(void)
@@ -149,9 +123,6 @@
 		}
 	    if (d == 'd'){
 		  d(pt);
-		}
-		if (d == 'h'){
-		  h(ut);
 		}
 		if (d == 'c'){
 		 
