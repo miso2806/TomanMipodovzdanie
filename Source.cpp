@@ -126,7 +126,7 @@
 		}
 	    if (d == 'k')
 	      break;
-	    if (d != 'n' && d != 'k' && d !='v' && d !='u' && d !='s' && d!='d' && d!='h' && d!='c' )
+	    else 
 	     printf("\n");
 	  }
 	  return 0;
