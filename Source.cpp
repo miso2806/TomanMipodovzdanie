@@ -4,59 +4,62 @@
 		#define POCET    ('Z' - 'A' + 1)
 
 	FILE*fr;
-	//void na N
-	void n(char *pt,int count)
-	{     
-	if ((fr = fopen("sifra.txt", "r")) == NULL) {
-	    printf("Subor sifra.TXT sa nepodarilo otvorit\n");
-	    return;
-	}    
-	      count=0;
-	      while((*pt=fgetc(fr))!=EOF) {
-	      	printf("%c",*pt);
-		    count++;
-	    }	
-	    printf("\n");
-	}
+	//vykonanie funkcie N pri vstupe pismenka n nacita sa pole s povodnym textom 
+void n(char *pt,int count) {  
+	//ak sa nepodari otvorit subor sifra.txt tak sa funkcia automaticky zastavi a vypise sa ze sa subor nepodarilo otvorit 
+	if ((fr = fopen("sifra.txt", "r")) == NULL) { 
+		printf("Subor sifra.TXT sa nepodarilo otvorit\n");
+		return; 
+	} 
+	//ak sa subor otvori funkcia prebehne a do pola sa nacita retazec ktory je v subore. 
+	count=0;
+	while((*pt=fgetc(fr))!=EOF) 
+	{ printf("%c",*pt); 
+	 count++; } 
+	printf("\n"); }
 	
 	
-	//void na V
+	//vykonanie funkcie V pri vstupe pismenka v sa vypise pole 
 	  void v(char *pt, char *ut,  int count)
-	{    
+	{    //ak je pole pt prazdne tak sa vypise sprava nebola nacitana
 	     if ((pt)==NULL){
 		  
       	 printf("Sprava nie je nacitana");
          return;
 	  }
+          //sprava sa premiestni z povodneho pola do upraveneho pola
 	    int i;
         *ut=*pt;
          for (i = 0; i < count; i++) 
+         //sprava sa zapise do upraveneho pola
          putchar(*ut);
          printf("\n");
 
 }
-
+      //vykonanie funkcie U pri vstupe pismenka u sa vypisu len velke pismena ktore sa nachadzaju v povodnom texte ktore sa nasledne zapisu do upraveneho textu
       void u(char *pt, char *ut,int count)
-      {
-      	if ((pt)==NULL){
+      {  // ak je povodny text prazdny vypise sa sprava nebola nacitana
+      	if ((ut)==NULL){
 		  
       	 printf("Sprava nie je nacitana");
          return;
 	  }
       	int c, i;
 	    int pole[POCET];
-	    
+	      
 	    for (i = 0; i < count; i++)
          ut = 0;
          for (i = 0; i < count; i++)
       	  while ((c = *pt)) {
+		 //oskenujeme si vsetky velke pismena v poli
 	        if (isupper(c))
+			// velke pismena sa zapisu do upraveneho pola
 		      putchar(*ut);
                    
       }
 	  }
-      
-      void s(char *ut,int count1){
+      //vykonanie funkcie S pri vstupe pismenka u upravena sprava sa vypise na obrazovku
+      void s(char *ut,int count1){ //ak je upravene pole prazdne vypise sa ze sprava nieje k dispozicii
       	if ((ut)==NULL){
 		  
       	 printf("Nie je k dispozicii upravena sprava");
@@ -64,21 +67,27 @@
 	  }
       	int i;
       	for (i=0;i<count1;i++)
+         //upravene pole sa vypise
       	 printf("%c",ut);
       	 printf("\n");
 	  }
 	  
-	  
-	  void d(pt){
+	  //pri nacitani funkcie D sa nacita d z pola a vypisu sa vsetky slova danej dlzky ktoru zadame
+	  void d(pt){ //ak je povodny text prazdny vypise sa sprava nebola nacitana
 	  	if ((pt)==NULL){
 		  
       	 printf("Sprava nie je nacitana");
          return;
 	  }
+           
 	   printf("Zadaj cislo k:\n")
+           // k bude dlzka slov ktore budeme chciet nacitat
 	   int k;
+		//k musi byt najmenej 1 a najviac 100
 	      while(k>=1 && k<=100){
+		//zistime ake k bolo v sprave napisane
 	    	scanf("%d",&k);
+		 //ak k nepatri do intervalu vypise sa ze sme zadali nespravnu hodnotu
 	    	if (k<1 && k>100){
 	    	 printf("zadal si nespravne 'k'\n");
 	    }
@@ -91,6 +100,7 @@
 	  }
       
       
+	 //inicializovanie mainu   
 	int main(void)
 	{
 	//nacitanie pola
@@ -100,9 +110,10 @@
 	char  upraveny_text[1000];
 	char *pt = &povodny_text[count];
 	char *ut = &upraveny_text[count1];
-	//nacitanie sifry
+	//nacitanie suboru
 	FILE *fr = fopen("sifra.txt", "r");
 	  int c, d;
+    // nacitanie pismenka ktore vypiseme do pola podla typu pismenka sa vykona akcia
 	  for (;;) {
 	    d = getchar();
 	    while (getchar() != '\n');
@@ -131,5 +142,4 @@
 	  }
 	  return 0;
 	}
-
  
