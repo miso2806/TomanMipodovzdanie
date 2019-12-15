@@ -36,7 +36,7 @@ void n(char *pt,int count) {
          printf("\n");
 
 }
-      //vykonanie funkcie V pri vstupe pismenka v sa vypisu len velke pismena ktore sa nachadzaju v povodnom texte ktore sa nasledne zapisu do upraveneho textu
+      //vykonanie funkcie U pri vstupe pismenka u sa vypisu len velke pismena ktore sa nachadzaju v povodnom texte ktore sa nasledne zapisu do upraveneho textu
       void u(char *pt, char *ut,int count)
       {  // ak je povodny text prazdny vypise sa sprava nebola nacitana
       	if ((ut)==NULL){
@@ -58,8 +58,8 @@ void n(char *pt,int count) {
                    
       }
 	  }
-      
-      void s(char *ut,int count1){
+      //vykonanie funkcie S pri vstupe pismenka u upravena sprava sa vypise na obrazovku
+      void s(char *ut,int count1){ //ak je upravene pole prazdne vypise sa ze sprava nieje k dispozicii
       	if ((ut)==NULL){
 		  
       	 printf("Nie je k dispozicii upravena sprava");
@@ -67,6 +67,7 @@ void n(char *pt,int count) {
 	  }
       	int i;
       	for (i=0;i<count1;i++)
+         //upravene pole sa vypise
       	 printf("%c",ut);
       	 printf("\n");
 	  }
