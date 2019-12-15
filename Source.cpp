@@ -36,22 +36,24 @@ void n(char *pt,int count) {
          printf("\n");
 
 }
-
+      //vykonanie funkcie V pri vstupe pismenka v sa vypisu len velke pismena ktore sa nachadzaju v povodnom texte ktore sa nasledne zapisu do upraveneho textu
       void u(char *pt, char *ut,int count)
-      {
-      	if ((pt)==NULL){
+      {  // ak je povodny text prazdny vypise sa sprava nebola nacitana
+      	if ((ut)==NULL){
 		  
       	 printf("Sprava nie je nacitana");
          return;
 	  }
       	int c, i;
 	    int pole[POCET];
-	    
+	      
 	    for (i = 0; i < count; i++)
          ut = 0;
          for (i = 0; i < count; i++)
       	  while ((c = *pt)) {
+		 //oskenujeme si vsetky velke pismena v poli
 	        if (isupper(c))
+			// velke pismena sa zapisu do upraveneho pola
 		      putchar(*ut);
                    
       }
