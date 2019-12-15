@@ -4,20 +4,19 @@
 		#define POCET    ('Z' - 'A' + 1)
 
 	FILE*fr;
-	//void na N
-	void n(char *pt,int count)
-	{     
-	if ((fr = fopen("sifra.txt", "r")) == NULL) {
-	    printf("Subor sifra.TXT sa nepodarilo otvorit\n");
-	    return;
-	}    
-	      count=0;
-	      while((*pt=fgetc(fr))!=EOF) {
-	      	printf("%c",*pt);
-		    count++;
-	    }	
-	    printf("\n");
-	}
+	//vykonanie funkcie N pri vstupe pismenka n nacita sa pole s povodnym textom 
+void n(char *pt,int count) {  
+	//ak sa nepodari otvorit subor sifra.txt tak sa funkcia automaticky zastavi a vypise sa ze sa subor nepodarilo otvorit 
+	if ((fr = fopen("sifra.txt", "r")) == NULL) { 
+		printf("Subor sifra.TXT sa nepodarilo otvorit\n");
+		return; 
+	} 
+	//ak sa subor otvori funkcia prebehne a do pola sa nacita retazec ktory je v subore. 
+	count=0;
+	while((*pt=fgetc(fr))!=EOF) 
+	{ printf("%c",*pt); 
+	 count++; } 
+	printf("\n"); }
 	
 	
 	//void na V
